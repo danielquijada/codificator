@@ -1,5 +1,5 @@
 let translationMap = {};
-populateDefaultMap();
+populateMap();
 
 document.getElementById('input').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
@@ -21,6 +21,16 @@ function transform() {
 function translateLetter(letter) {
     const translated = translationMap[letter] || translationMap[letter.toLowerCase()] || translationMap[letter.toUpperCase()];
     return translated || translationMap.default || '?';
+}
+
+function populateMap () {
+    const savedMap = localStorage.getItem('map');
+    if (savedMap) {
+        translationMap = JSON.parse(savedMap);
+        refreshMap();
+    } else {
+        populateDefaultMap();
+    }
 }
 
 function populateDefaultMap() {
@@ -58,6 +68,7 @@ function refreshMap() {
         e.parentNode.removeChild(e);
     }
     showMap();
+    localStorage.setItem('map', JSON.stringify(translationMap));
 }
 
 function showMap() {
