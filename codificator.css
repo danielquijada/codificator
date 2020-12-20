@@ -1,0 +1,42 @@
+div .map * {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: 5px;
+}
+
+table button {
+    border: none !important;
+    outline: none !important;
+    background: none;
+    cursor: pointer;
+    padding: 0 !important;
+    font-weight: bolder;
+}
+
+table button.remove-btn {
+    color: #a00;
+}
+
+table button.edit-btn {
+    color: #00a;
+}
+
+table button.add-btn {
+    color: #0a0;
+    font-size: 22px;
+}
+
+table td space {
+    border: none !important;
+}
+
+table td space::before {
+    content: "[space]";
+    color: #444;
+    font-size: 12px;
+}

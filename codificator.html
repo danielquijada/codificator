@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Codificator</title>
+    <link rel="stylesheet" href="codificator.css">
+</head>
+<body>
+    <div class="translator">
+        <h1>Codificator</h1>
+        <div>
+            <input type="text" name="input" id="input">
+            <button onclick="transform()">Translate!</button>
+        </div>
+        <div>
+            <p class="output" id="output">Output...</p>
+        </div>
+    </div>
+    <div class="mapContainer">
+        <h1>Current Map</h1>
+        <table class="map" id="map">
+            <thead>
+                <th>Key</th>
+                <th>Value</th>
+                <td><button class="add-btn" onclick="add()">+</button></td>
+            </thead>
+        </table>
+        <button onclick="populateDefaultMap()">Reload Defaults</button>
+    </div>
+    <script src="codificator.js"></script>
+</body>
+</html>
